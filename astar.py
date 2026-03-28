@@ -45,7 +45,7 @@ class Node:
         return self.color == ORANGE
     
     def is_end_node(self):
-        return self.color == PURPLE
+        return self.color == TURQUOISE
     
     def reset(self):
         self.color == WHITE
@@ -57,6 +57,35 @@ class Node:
         self.color = GREEN
     
     def make_barrier(self):
-        
+        self.color = BLACK
+
+    def make_end(self):
+        self.color = TURQUOISE
+
+    def make_path(self):
+        self.color = PURPLE
+
+    def draw(self, window):
+        pygame.draw.rect(window, self.color, (self.x, self.y, self.width, self.width))
     
+    def update_neighbors(self, grid):
+        pass
+
+    def __lt__(self, other):#lt stand for less than btw its a dunder method
+        return False
     
+def heuristic(point1, point2):
+    x1, y1 = point1
+    x2, y2 = point2
+    return abs(x1 - x2) + abs(y1 - y2)
+
+def make_grid(rows, width):
+    grid = []
+    gap = width // rows
+    for i in range(rows):
+        grid.append([])
+        for j in range(rows):
+            node = Node(i, j, gap, rows)
+            grid[i].append(node)
+
+    return grid
