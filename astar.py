@@ -138,7 +138,8 @@ def algorithm(draw, grid, start_position, end_position):
                     count += 1
                     open_set.put((f_score[neighbor], count, neighbor))
                     open_set_hash.add(neighbor)
-                    neighbor.make_closed()
+                    if neighbor != end_position:
+                        neighbor.make_open()
         
         draw()
 
