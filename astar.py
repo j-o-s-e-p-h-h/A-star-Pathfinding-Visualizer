@@ -136,7 +136,7 @@ def algorithm(draw, grid, start_position, end_position):
                 f_score[neighbor] = temp_g_score + heuristic(neighbor.get_position(), end_position.get_position())
                 if neighbor not in open_set_hash:
                     count += 1
-                    open_set.put(f_score[neighbor], count, neighbor)
+                    open_set.put((f_score[neighbor], count, neighbor))
                     open_set_hash.add(neighbor)
                     neighbor.make_closed()
         
