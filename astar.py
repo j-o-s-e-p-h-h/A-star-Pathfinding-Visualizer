@@ -144,15 +144,15 @@ def main(window, width):
                 position = pygame.mouse.get_pos()
                 row, column = get_clicked_position(position, rows, width)
                 node = grid[row][column]
-                if not started:
-                    start = node
-                    start.make_start()
+                if not start_position and node != end_position:
+                    start_position = node
+                    start_position.make_start()
 
-                elif not end:
-                    end = node
-                    end.make_end()
+                elif not end_position and node != start_position:
+                    end_position = node
+                    end_position.make_end()
 
-                elif node != end and node != start:
+                elif node != end_position and node != start_position:
                     node.make_barrier()
 
 
