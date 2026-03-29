@@ -10,6 +10,9 @@
 
 SHOWCASE VIDEO
 
-https://github.com/user-attachments/assets/e8fa8a9c-fa82-4357-9d4c-2af909097c9c
+
+https://github.com/user-attachments/assets/e3be5248-f04b-4cee-977b-eb6ef72abfd0
+
+
 
 
